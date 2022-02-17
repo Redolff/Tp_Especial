@@ -1,0 +1,137 @@
+/* Header */
+.link-title{
+    color: chocolate;
+}
+.card-title :hover{
+    text-decoration: none;
+    color: rgb(170, 88, 29);
+}
+.nav-link :hover{
+    text-decoration: none;
+    color: rgb(172, 88, 28);
+}
+.nav-item{
+    color: chocolate;
+}
+
+/* Home */
+
+.titleprod{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.list-group{
+    padding-right: 50%;
+    margin-left: -20px;
+}
+
+/* Detalle de los productos */
+
+.titledetalle{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+#list-group{
+    padding-right: 10%;
+    margin-left: -20px;
+}
+
+/* Categorias */
+
+.title_cat{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.title-prod-cat{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/* Pagina de inicio de sesion */
+
+.title-form{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.form-control{
+    padding-right: 150px;
+}
+.boton{
+    margin-top: 10px;
+    padding-right: 10px;
+}
+
+/* Seccion Administracion */
+
+.title-adm{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/* Seccion Edicion Productos */
+
+.title-edit-prod{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/* Seccion Edicion Categorias */
+
+.title-edit-cat{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.error-edit-cat{
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: red ;
+}
+
+/* Seccion Edicion Usuarios */
+
+.title-edit-users{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/* Seccion Comentarios */
+
+.title-coment{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.form-floating{
+    margin-left: 15px;
+}
+.card{
+    margin-left: 18px;
+}
+#appComent{
+    margin-top: 30px;
+}
+.lista_comentarios{
+    margin-top: 20px;
+    border-bottom: 1px solid gray;
+    display: flex;
+}
+.comentario{
+    margin-bottom: 5px;
+}
+.datos_coment{
+    display: flex;
+}
+.fecha_coment{
+    font-size: 11px;
+    margin-left: 5px;
+    margin-top: 8px;
+}
+.user_coment{
+    color: rgb(51, 43, 43);
+    font-weight: bold;
+}
+.btn-borrar{
+    font-size: 12px;
+    margin-left: 5px;
+    background-color: #0061BD;
+    color: white;
+}
