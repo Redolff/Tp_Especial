@@ -3,11 +3,11 @@
 const API_URL = 'api/comentarios';
 
 let appComent = new Vue({
-    el: "#appComent",
-    data: {
-        titulo: "Comentarios del producto:",
-        comentarios: [],
-        rol: false,
+    el : "#app-comentarios",
+    data : {
+        titulo : "Comentarios del producto: ",
+        comentarios : [],
+        rol : false,
     },
     methods: {
         eliminarComentario: function(itemId){
@@ -17,57 +17,61 @@ let appComent = new Vue({
 });
 getComentarios();
 
+
 async function getComentarios(){
-    
-    try {
+    try{
         let id = document.querySelector(".id").dataset.id;
-        let response = await fetch(API_URL+`/${id}`);
+        let response = await fetch (API_URL +`/${id}`);
         let comentarios = await response.json();
         appComent.comentarios = comentarios;
         if(document.querySelector(".id").dataset.rol == 1){
             appComent.rol = true;
         }
-    } catch (error) {
+    }
+    catch (error){
         console.log(error);
     }
 }
 
-if(document.querySelector(".form-coment")){
-    document.querySelector(".form-coment").addEventListener("submit", addComentario);
+if(document.querySelector(".form-comentarios")){
+    document.querySelector(".form-comentarios").addEventListener("submit", agregarComentario);
 }
 
-async function addComentario(e){
+async function agregarComentario(e) {
     e.preventDefault();
+
     let data = {
-        Id_producto: document.querySelector(".id").dataset.id,
-        Texto: document.querySelector("#floatingTextarea2").value,
-        User_coment: document.querySelector(".id").dataset.user,
-        Puntaje: document.querySelector(".puntaje").value,
+        Id_producto : document.querySelector(".id").dataset.id,
+        texto : document.querySelector("#textArea").value,
+        user_coment : document.querySelector(".id").dataset.user,
+        puntaje : document.querySelector(".puntaje").value,
     }
     try {
         let resultado = await fetch(API_URL,{
-            "method": "POST",
-            "headers": { "Content-type": "application/json" },
-            "body": JSON.stringify(data)
+            "method" : "POST",
+            "headers" : {"Content-type" : "application/json"},
+            "body" : JSON.stringify(data)
         });
-        if(resultado.status==200){
-            document.querySelector(".form-coment").reset();
+        if(resultado.status == 200){
+            document.querySelector(".form-comentarios").reset();
             getComentarios();
         }
-    } catch (error) {
+    }
+    catch (error) {
         console.log(error);
     }
 }
 
 async function deleteComentario(id){
     try{
-        let resultado = await fetch(API_URL+`/${id}`,{
-            "method": "DELETE"
+        let resultado = await fetch (API_URL+`/${id}`, {
+            "method" : "DELETE"
         });
         if(resultado.status == 200){
             getComentarios();
         }
-    }catch(error){
+    }
+    catch (error){
         console.log(error);
     }
     getComentarios();

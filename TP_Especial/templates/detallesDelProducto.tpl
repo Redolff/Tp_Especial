@@ -15,9 +15,9 @@
   <div class="form-floating">
       <div class="contenedor-coment">
           <h3 class="title-coment">Deja una reseña sobre el producto:</h3>
-          <form class="form-coment">
-              <textarea class="text_coment form-control" placeholder="Deja un comentario aqui" id="floatingTextarea2" style="width: 90%" name="texto" required></textarea>
-              <label>Deja un puntaje del producto</label><select class="puntaje">
+          <form class="form-comentarios">
+              <textarea class="text_coment form-control" placeholder="Deja un comentario aqui" id="textArea" style="width: 90%" name="texto" required></textarea>
+              <label>Deja un puntaje del producto</label> <select class="puntaje">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -37,7 +37,7 @@
     </div>
 {/if}
 <div class="id" data-id="{$producto->Id}" data-rol="{$sesion}" data-user="{$user}">
-    {include file='templates/vue/comentarios.tpl'}
+    {include file="templates/vue/comentarios.tpl"}
 </div>
 
 <script src="js/comentarios.js"></script>

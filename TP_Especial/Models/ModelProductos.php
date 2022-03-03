@@ -1,6 +1,6 @@
 <?php
 
-    Class modelProductos{
+    class modelProductos{
 
         private $db;
 

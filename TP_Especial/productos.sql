@@ -69,12 +69,12 @@ CREATE TABLE `usuarios` (
 --
 
 CREATE TABLE `comentarios` (
-  `Id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `Id_producto` int(11) NOT NULL,
-  `Texto` varchar(500) DEFAULT NULL,
-  `User_coment` varchar(500) DEFAULT NULL,
-  `Puntaje` int(11) NOT NULL,
-  `Fecha` date DEFAULT  CURRENT_TIMESTAMP
+  `texto` varchar(500) DEFAULT NULL,
+  `user_coment` varchar(500) DEFAULT NULL,
+  `puntaje` int(11) NOT NULL,
+  `fecha` date DEFAULT  CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -106,7 +106,7 @@ ALTER TABLE `usuarios`
 --
 
 ALTER TABLE `comentarios`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`id`);
 
 -- AUTO_INCREMENT de las tablas volcadas
 --
@@ -133,7 +133,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- Indice clave foranea tabla `productos`

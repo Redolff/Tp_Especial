@@ -1,50 +1,52 @@
 <?php
     require_once('./Models/ModelComentarios.php');
-    require_once ('./Views/viewApi.php');
-    require_once ('./Controllers/controllerUsuarios.php');
+    require_once('./Views/viewApi.php');
+    require_once('./Controllers/controllerUsuarios.php');
 
-    class ControllerApi{
+    class controllerApi extends controllerUsuarios{
 
         private $model;
         private $view;
-        private $controllerUser;
 
         function __construct(){
             $this->model = new modelComentarios();
             $this->view = new viewApi();
-            $this->controllerUser = new controllerUsuarios();
+        }
+        
+        private function getData(){
+            $body = file_get_contents("php://input"); //Leo el cuerpo del mensaje.
+            return json_decode($body); //Devuelvo un objeto JSON.
         }
 
-        private function getBody() {
-            $bodyString = file_get_contents("php://input");
-            return json_decode($bodyString);
-        }
-
-        public function getComentarios($params = null){
-            $id = $params[":ID"];
+        public function getComentarios($params = []){
+            $id = $params[':ID'];
             $comentarios = $this->model->getComentarios($id);
-            $this->view->response($comentarios,200);
+            return $this->view->response($comentarios, 200);
         }
 
-        public function insertComentario($params = null){
-            $body = $this->getBody();
-
-            if(!empty($body->Texto) && !empty($body->Id_producto) && !empty($body->Puntaje) && !empty($body->User_coment)){
-                $comentario=$this->model->insertComentario($body->Id_producto, $body->Texto, $body->Puntaje, $body->User_coment);
-                if($comentario){
-                    $this->view->response("El comentario se insertó con el id=$idComentario", 200);
-                }else{
-                    $this->view->response("No se puedo enviar el comentario", 500);
+        public function insertComentarios($params = []){
+            $body = $this->getData();
+            
+            if(!empty($body->Id_producto) && !empty($body->texto) && !empty($body->user_coment) && !empty($body->puntaje)){
+                $agregar = $this->model->insertComentario($body->Id_producto, $body->texto, $body->user_coment, $body->puntaje);
+                if ($agregar){
+                    return $this->view->response("El comentario id:$agregar fue insertado", 200);
                 }
-            }else{
+                else{
+                    return $this->view->response("No se pudo insertar el comentario", 500);
+                }
+            }
+            else{
                 $this->view->response("Envio incapaz", 400);
             }
         }
 
-        public function deleteComentario($params = null){
-            $this->controllerUser->showLoginAdmin();
-            $id = $params[":ID"];
+        public function deleteComentario($params = []){
+            $this->showLoginAdmin();
+            $id = $params[':ID'];
             $this->model->deleteComentario($id);
+            return $this->view->response("El comentario id:$id fue eliminado", 200);
         }
 
     }
+?>

@@ -76,6 +76,13 @@
             }
         }
 
+        function showUserConectado(){
+            if(isset($_SESSION['user'])){
+                return $_SESSION['user'];
+            }
+            return null;
+        }
+
         function showLoginAdmin(){
             session_start();
             if(($_SESSION['admin'] != 1)){

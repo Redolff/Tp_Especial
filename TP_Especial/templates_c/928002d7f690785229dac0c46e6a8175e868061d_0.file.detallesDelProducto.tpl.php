@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-02-16 23:54:15
+/* Smarty version 3.1.39, created on 2022-03-03 00:41:15
   from 'C:\xampp\htdocs\TP_Especial\templates\detallesDelProducto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_620d80973800e0_78799293',
+  'unifunc' => 'content_6220009baed0c8_97213589',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '928002d7f690785229dac0c46e6a8175e868061d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TP_Especial\\templates\\detallesDelProducto.tpl',
-      1 => 1645052012,
+      1 => 1646264093,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_620d80973800e0_78799293 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6220009baed0c8_97213589 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:templates/nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -56,9 +56,9 @@ if ($_prefixVariable1 == 1 || $_prefixVariable2 == 0) {?>
   <div class="form-floating">
       <div class="contenedor-coment">
           <h3 class="title-coment">Deja una reseña sobre el producto:</h3>
-          <form class="form-coment">
-              <textarea class="text_coment form-control" placeholder="Deja un comentario aqui" id="floatingTextarea2" style="width: 90%" name="texto" required></textarea>
-              <label>Deja un puntaje del producto</label><select class="puntaje">
+          <form class="form-comentarios">
+              <textarea class="text_coment form-control" placeholder="Deja un comentario aqui" id="textArea" style="width: 90%" name="texto" required></textarea>
+              <label>Deja un puntaje del producto</label> <select class="puntaje">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -81,7 +81,7 @@ if ($_prefixVariable1 == 1 || $_prefixVariable2 == 0) {?>
 " data-rol="<?php echo $_smarty_tpl->tpl_vars['sesion']->value;?>
 " data-user="<?php echo $_smarty_tpl->tpl_vars['user']->value;?>
 ">
-    <?php $_smarty_tpl->_subTemplateRender('file:templates/vue/comentarios.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+    <?php $_smarty_tpl->_subTemplateRender("file:templates/vue/comentarios.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 </div>
 

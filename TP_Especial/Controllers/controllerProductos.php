@@ -22,7 +22,7 @@
 
         function showDetalleDelProducto($id){
             $producto = $this->model->getDetalleProductos($id);
-            $this->view->renderViewDetalleProducto($producto, $this->controllerUser->showAdminOUsuario());
+            $this->view->renderViewDetalleProducto($producto, $this->controllerUser->showAdminOUsuario(), $this->controllerUser->showUserConectado());
         }
 
         function showInsertarProducto(){

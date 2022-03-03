@@ -17,7 +17,7 @@
         }
 
         function getComentario($id){
-            $sentencia = $this->db->prepare('SELECT * FROM comentarios WHERE Id = ?');
+            $sentencia = $this->db->prepare('SELECT * FROM comentarios WHERE id = ?');
             $sentencia->execute([$id]);
             $comentario = $sentencia->fetch(PDO::FETCH_OBJ);
 
@@ -25,13 +25,13 @@
         }
 
         function insertComentario($id, $texto, $user, $puntaje){
-            $sentencia = $this->db->prepare('INSERT INTO comentarios (Id_producto, Texto, User_coment, Puntaje) VALUES (?,?,?,?)');
+            $sentencia = $this->db->prepare('INSERT INTO comentarios (Id_producto, texto, user_coment, puntaje) VALUES (?,?,?,?)');
             $sentencia->execute(array($id, $texto, $user, $puntaje));
             return $this->db->lastInsertId();
         }
 
         function deleteComentario($id){
-            $sentencia = $this->db->prepare('DELETE FROM comentarios WHERE Id = ?');
+            $sentencia = $this->db->prepare('DELETE FROM comentarios WHERE id = ?');
             $sentencia->execute(array($id));
         }
 

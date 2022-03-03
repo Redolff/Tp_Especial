@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2022-02-16 23:52:33
+/* Smarty version 3.1.39, created on 2022-03-02 18:17:26
   from 'C:\xampp\htdocs\TP_Especial\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_620d80318e36e4_15500787',
+  'unifunc' => 'content_621fa6a6373906_04455402',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '87eb1d7835d0e57894d989cec158c4a93e2eff32' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TP_Especial\\templates\\header.tpl',
-      1 => 1645051944,
+      1 => 1646241439,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_620d80318e36e4_15500787 (Smarty_Internal_Template $_smarty_tpl) {
+function content_621fa6a6373906_04455402 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +32,8 @@ function content_620d80318e36e4_15500787 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <?php echo '<script'; ?>
- src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"><?php echo '</script'; ?>
->
+ src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"><?php echo '</script'; ?>
+>    
     <title>New Sports Clothing</title>
 </head>
 <body><?php }

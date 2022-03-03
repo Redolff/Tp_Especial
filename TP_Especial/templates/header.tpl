@@ -7,7 +7,7 @@
     <base href="{BASE_URL}">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
     <title>New Sports Clothing</title>
 </head>
 <body>
